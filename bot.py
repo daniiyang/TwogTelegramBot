@@ -5,7 +5,7 @@ import telebot
 
 import config
 
-# инициализация бота и настройка носков. без носков не работает
+
 ip = '127.0.0.1'
 port = 9150
 socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, ip, port)
@@ -13,7 +13,6 @@ socket.socket = socks.socksocket
 
 bot = telebot.TeleBot(token=config.TOKEN, threaded=False)
 
-# инициализация всех глобальных переменных
 order_lot = 0
 order_application = 0
 
@@ -61,7 +60,7 @@ def formatting_user_message(user_message):
     else:
         USER_NAME = user_message.from_user.first_name + ' ' + user_message.from_user.last_name
 
-    # еперь оформляем репорт
+    # оформляем репорт
     global formatted_message
     global formatted_order
 
